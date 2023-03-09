@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@online-compiler-judge-monorepo/auth": ["libs/auth/src/index.ts"],
+      "@online-compiler-judge-monorepo/entities": [
+        "libs/entities/src/index.ts"
+      ],
+      "@online-compiler-judge-monorepo/mongo-database": [
+        "libs/mongo-database/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

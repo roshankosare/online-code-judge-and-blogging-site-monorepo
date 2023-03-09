@@ -1,0 +1,14 @@
+
+services:
+  api:
+    build:
+      context: ./
+      target: development
+      dockerfile: ./apps/api/Dockerfile
+    volumes:
+      - ./apps/api:/usr/src/app/apps/api
+      - /usr/src/app/node_modules
+    ports:
+      - 5000:5000
+    command: npx nx serve api
+    

@@ -1,7 +1,7 @@
 {
-  "name": "api",
+  "name": "code-run-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/api/src",
+  "sourceRoot": "apps/code-run-service/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,12 +10,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/api",
-        "main": "apps/api/src/main.ts",
-        "tsConfig": "apps/api/tsconfig.app.json",
-        "assets": ["apps/api/src/"],
+        "outputPath": "dist/apps/code-run-service",
+        "main": "apps/code-run-service/src/main.ts",
+        "tsConfig": "apps/code-run-service/tsconfig.app.json",
+        "assets": ["apps/code-run-service/src/"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/api/webpack.config.js"
+        "webpackConfig": "apps/code-run-service/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -28,11 +28,11 @@
     "serve": {
       "executor": "@nrwl/js:node",
       "options": {
-        "buildTarget": "api:build"
+        "buildTarget": "code-run-service:build"
       },
       "configurations": {
         "production": {
-          "buildTarget": "api:build:production"
+          "buildTarget": "code-run-service:build:production"
         }
       }
     },
@@ -40,14 +40,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/api/**/*.ts"]
+        "lintFilePatterns": ["apps/code-run-service/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/api/jest.config.ts",
+        "jestConfig": "apps/code-run-service/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
